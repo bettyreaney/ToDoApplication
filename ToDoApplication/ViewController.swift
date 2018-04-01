@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tasks: [Task] = []
 
     override func viewDidLoad() {
+        
+        tasks.append(Task(name: "Test object"))
 
     }
     
