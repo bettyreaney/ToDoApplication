@@ -8,18 +8,41 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var tasks: [Task] = []
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
     }
-
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
+        
+        cell.taskNameLabel.text = tasks[indexPath.row].name
+        
+        if tasks[indexPath.row].checked{
+            cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "CheckBoxFilled"), for: UIControlState.normal)
+        } else {
+            cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "CheckBoxOutline"), for: UIControlState.normal)
+        }
+        
+        
+        return cell
+    }
 }
+    class Task{
+        var name = ""
+        var checked = false
+        
+        convenience init(name: String){
+        self.init()
+        self.name = name
+        }
+    }
+
 

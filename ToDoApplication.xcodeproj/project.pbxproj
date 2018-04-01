@@ -14,6 +14,7 @@
 		0B974C12207097D800F9DD5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B974C10207097D800F9DD5B /* LaunchScreen.storyboard */; };
 		0B974C1D207097D800F9DD5B /* ToDoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B974C1C207097D800F9DD5B /* ToDoApplicationTests.swift */; };
 		0B974C28207097D800F9DD5B /* ToDoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B974C27207097D800F9DD5B /* ToDoApplicationUITests.swift */; };
+		0B974C3820709F4100F9DD5B /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B974C3720709F4100F9DD5B /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0B974C23207097D800F9DD5B /* ToDoApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B974C27207097D800F9DD5B /* ToDoApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApplicationUITests.swift; sourceTree = "<group>"; };
 		0B974C29207097D800F9DD5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B974C3720709F4100F9DD5B /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				0B974C07207097D800F9DD5B /* AppDelegate.swift */,
 				0B974C09207097D800F9DD5B /* ViewController.swift */,
 				0B974C0B207097D800F9DD5B /* Main.storyboard */,
+				0B974C3720709F4100F9DD5B /* TaskCell.swift */,
 				0B974C0E207097D800F9DD5B /* Assets.xcassets */,
 				0B974C10207097D800F9DD5B /* LaunchScreen.storyboard */,
 				0B974C13207097D800F9DD5B /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B974C0A207097D800F9DD5B /* ViewController.swift in Sources */,
+				0B974C3820709F4100F9DD5B /* TaskCell.swift in Sources */,
 				0B974C08207097D800F9DD5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
