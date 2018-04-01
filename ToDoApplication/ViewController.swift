@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask, ChangeButton {
     
     var tasks: [Task] = []
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         
         tasks.append(Task(name: "Test object"))
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,9 +35,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "CheckBoxOutline"), for: UIControlState.normal)
         }
         
+        cell.delegate = self
+        cell.indexP = indexPath.row
+        cell.tasks = tasks
+        
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddTaskController
+        vc.delegate = self 
+    }
+    
+    func addTask(name: String) {
+        tasks.append(Task(name: name))
+        tableView.reloadData()
+    }
+    
+    func changeButton(checked: Bool, index: Int) {
+        tasks[index].checked = checked
+        tableView .reloadData()
+    }
+    
 }
     class Task{
         var name = ""
